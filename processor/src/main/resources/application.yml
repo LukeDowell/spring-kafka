@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    stream:
+      bindings:
+        hello-in-0:
+          destination: hello
+        hello-out-0:
+          destination: goodbye
+      kafka:
+        binder:
+          brokers: localhost:29092,localhost:39092
