@@ -1,3 +1,4 @@
 rootProject.name = 'spring-kafka'
-include 'member'
-include 'funnel'
+include 'delivery'
+include 'order'
+include 'restaurant'
