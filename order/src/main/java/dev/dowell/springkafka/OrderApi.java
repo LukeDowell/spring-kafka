@@ -1,7 +1,6 @@
 package dev.dowell.springkafka;
 
 import lombok.*;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

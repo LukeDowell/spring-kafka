@@ -1,9 +1,12 @@
 package dev.dowell.springkafka;
 
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.kafka.test.context.EmbeddedKafka;
 
 @SpringBootTest
-@EmbeddedKafka
-public class EmbeddedKafkaTest {
+class RestaurantApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
 }
