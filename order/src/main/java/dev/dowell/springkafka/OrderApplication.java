@@ -4,11 +4,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.UUID;
 import java.util.function.Function;
 
 @SpringBootApplication
+@EnableTransactionManagement
 @Slf4j
 public class OrderApplication {
 

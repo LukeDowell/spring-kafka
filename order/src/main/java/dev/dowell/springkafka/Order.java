@@ -1,29 +1,20 @@
 package dev.dowell.springkafka;
 
 import lombok.*;
-import org.springframework.data.annotation.Id;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 import java.util.UUID;
 
+@Entity
 @Data
-@Setter(AccessLevel.PRIVATE)
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Builder
+@Table(name = "food_order") // Huh turns out you can't name a table 'order'
 public class Order {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID orderId;
+    private UUID id;
 
-    private Status status = Status.UNSTARTED;
-
-    enum Status {
-        UNSTARTED,
-        STARTED,
-        COMPLETED
-    }
+    private String customerId;
 }

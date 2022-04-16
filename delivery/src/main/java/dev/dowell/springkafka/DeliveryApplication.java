@@ -16,11 +16,11 @@ public class DeliveryApplication {
         SpringApplication.run(DeliveryApplication.class, args);
     }
 
-    @Bean
-    public Function<String, String> receiveMemberInformation() {
-        return in -> {
-            log.info("Message received {}", in);
-            return UUID.randomUUID().toString();
-        };
-    }
+//    @Bean
+//    public Function<String, String> receiveMemberInformation() {
+//        return in -> {
+//            log.info("Message received {}", in);
+//            return UUID.randomUUID().toString();
+//        };
+//    }
 }
