@@ -4,13 +4,16 @@ import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@DataJpaTest
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class TransactionalTestsTest extends AbstractIntegrationTest {
 
     @Autowired
@@ -33,7 +36,6 @@ public class TransactionalTestsTest extends AbstractIntegrationTest {
 
     @Test
     @org.junit.jupiter.api.Order(2)
-    @Transactional
     public void shouldDeleteByCustomerId() {
         var id = UUID.randomUUID();
         var myCustomerId = UUID.randomUUID().toString();
