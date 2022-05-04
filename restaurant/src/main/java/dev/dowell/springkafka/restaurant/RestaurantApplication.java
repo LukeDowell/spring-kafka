@@ -1,19 +1,15 @@
-package dev.dowell.springkafka;
+package dev.dowell.springkafka.restaurant;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-
-import java.util.UUID;
-import java.util.function.Function;
 
 @SpringBootApplication
 @Slf4j
-public class DeliveryApplication {
+public class RestaurantApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DeliveryApplication.class, args);
+        SpringApplication.run(RestaurantApplication.class, args);
     }
 
 //    @Bean

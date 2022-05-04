@@ -1,20 +1,15 @@
-package dev.dowell.springkafka;
+package dev.dowell.springkafka.delivery;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import java.util.UUID;
 import java.util.function.Function;
 
-@SpringBootApplication
+@Configuration
 @Slf4j
-public class OrderApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(OrderApplication.class, args);
-    }
+public class DeliveryStreams {
 
     @Bean
     public Function<String, String> receiveMemberInformation() {

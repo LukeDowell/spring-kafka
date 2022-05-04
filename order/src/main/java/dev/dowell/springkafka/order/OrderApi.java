@@ -1,9 +1,8 @@
-package dev.dowell.springkafka;
+package dev.dowell.springkafka.order;
 
 import lombok.*;
 import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

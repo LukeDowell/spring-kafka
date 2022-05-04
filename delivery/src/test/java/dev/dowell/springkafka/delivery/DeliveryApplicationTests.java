@@ -1,10 +1,10 @@
-package dev.dowell.springkafka;
+package dev.dowell.springkafka.delivery;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RestaurantApplicationTests {
+class DeliveryApplicationTests {
 
     @Test
     void contextLoads() {

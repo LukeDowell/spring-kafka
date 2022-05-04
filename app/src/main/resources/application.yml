@@ -1,0 +1,18 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    stream:
+      bindings:
+        receiveMemberInformation-in-0:
+          destination: funnel-in-new-referral
+        receiveMemberInformation-out-0:
+          destination: funnel-out-new-member
+      kafka:
+        binder:
+          brokers: localhost:29092,localhost:39092
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect

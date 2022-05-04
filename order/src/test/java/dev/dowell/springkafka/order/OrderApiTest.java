@@ -1,4 +1,4 @@
-package dev.dowell.springkafka;
+package dev.dowell.springkafka.order;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
