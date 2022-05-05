@@ -4,10 +4,8 @@ spring:
   cloud:
     stream:
       bindings:
-        receiveMemberInformation-in-0:
-          destination: funnel-in-new-referral
-        receiveMemberInformation-out-0:
-          destination: funnel-out-new-member
+        newOrder-out-0:
+          destination: new-order
       kafka:
         binder:
           brokers: localhost:29092,localhost:39092

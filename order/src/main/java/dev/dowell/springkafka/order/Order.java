@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.ZonedDateTime;
 import java.util.UUID;
 
 @Entity
@@ -15,11 +16,13 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "food_order") // Huh turns out you can't name a table 'order'
+@Table(name = "customer_order") // Huh turns out you can't name a table 'order'
 public class Order {
 
     @Id
     private UUID id;
 
     private String customerId;
+
+    private ZonedDateTime timeOrderWasPlaced;
 }

@@ -1,4 +1,4 @@
-package dev.dowell.springkafka.order;
+package dev.dowell.springkafka.app;
 
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;

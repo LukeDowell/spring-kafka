@@ -1,6 +1,9 @@
 package dev.dowell.springkafka.order;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,11 +19,10 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class OrderApi {
 
-    @NonNull private final OrderRepository orderRepository;
-    @NonNull private final StreamBridge streamBridge;
+    private final OrderRepository orderRepository;
+    private final StreamBridge streamBridge;
 
     @PostMapping
-//    @Transactional
     public <T> ResponseEntity<T> createOrder(@RequestBody CreateOrderRequest createOrderRequest) {
         var savedEntity = orderRepository.save(
             Order.builder()
@@ -29,7 +31,8 @@ public class OrderApi {
                 .build()
         );
 
-        streamBridge.send("order-out-order-created", savedEntity);
+        // TODO transactional, handle case of StreamBridge#send returning false
+        streamBridge.send("newOrder-out-0", savedEntity);
 
         return ResponseEntity.ok().build();
     }
