@@ -11,5 +11,5 @@ import org.springframework.context.annotation.Import;
 @SpringBootTest
 public class OrderToRestaurantTests extends AbstractIntegrationTest {
 
-    
+    // TODO Hit Order API and await for Restaurant to persist a RestaurantOrder with the status of "Prepping"
 }
