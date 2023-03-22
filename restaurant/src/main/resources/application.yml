@@ -2,10 +2,22 @@ server:
   port: 8080
 spring:
   cloud:
+    function:
+      definition: newOrderCache|receiveNewOrder
     stream:
+      function:
+        bindings:
+          newOrderCache|receiveNewOrder: receiveNewOrderWithCache
       bindings:
-        receiveNewOrder-in-0:
+        newOrderCache-in-0:
           destination: new-order
+        receiveNewOrder-out-0:
+          destination: restaurant-order-prep-started
       kafka:
         binder:
           brokers: localhost:29092,localhost:39092
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect

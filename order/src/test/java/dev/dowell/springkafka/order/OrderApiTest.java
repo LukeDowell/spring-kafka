@@ -34,6 +34,7 @@ public class OrderApiTest extends AbstractIntegrationTest {
     @DisplayName("it should be able to submit an order and emit a new-order event")
     public void submitOrderAndSeeEvent() throws Exception {
         var customerId = UUID.randomUUID().toString();
+
         mockMvc.perform(post("/api/order")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(

@@ -20,3 +20,12 @@ whether or not the restaurant is open / closed, etc.
 
 I'm trying to think of events (in this case, messages coming in from a kafka topic) as 1st class domain citizens. If I'm
 to test from the outside in, tests will begin by sending a message in, and expecting something to pop out.
+
+**5/05/2022**
+
+Sick, presenting this super unfinished repository today. Things on the TODO list:
+
+ * Have Restaurant show examples of working with Spring Integration
+ * Have Delivery integrate with Kafka using Spring-Kafka, not Spring Cloud Streams
+ * Try to recreate the AbstractAggregateRoot Domain Events pattern
+ * Come up with some good example + test of guarding against kafka replay + re-processing using a cache

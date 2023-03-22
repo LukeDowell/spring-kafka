@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class RestaurantNewOrder {
+public class NewOrder {
     private String id;
     private String customerId;
 }

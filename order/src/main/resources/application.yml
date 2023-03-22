@@ -6,6 +6,12 @@ spring:
       bindings:
         newOrder-out-0:
           destination: new-order
+        receiveMemberInformation-in-0:
+          destination: new-member
+        receiveMemberInformation-in-1:
+          destination: new-member-topic-two
+        receiveMemberInformation-out-0:
+          destination: new-member-id
       kafka:
         binder:
           brokers: localhost:29092,localhost:39092
